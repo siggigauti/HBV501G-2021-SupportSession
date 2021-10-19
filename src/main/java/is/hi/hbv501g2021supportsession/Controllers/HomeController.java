@@ -31,13 +31,13 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/addbook", method = RequestMethod.GET)
-    public String addBookForm(Book book){
+    public String addBookGET(Book book){
 
         return "newBook";
     }
 
     @RequestMapping(value = "/addbook", method = RequestMethod.POST)
-    public String addBook(Book book, BindingResult result, Model model){
+    public String addBookPOST(Book book, BindingResult result, Model model){
         if(result.hasErrors()){
             return "newBook";
         }
